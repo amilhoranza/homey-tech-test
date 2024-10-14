@@ -13,6 +13,9 @@ gem 'devise'
 # Front-end styling
 gem 'bootstrap', '~> 5.0.0'
 
+gem 'mini_racer', platforms: :ruby
+gem 'execjs'
+
 # Testing
 group :development, :test do
   gem 'rspec-rails', '~> 5.0'
@@ -30,6 +33,10 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'annotate'
+  gem 'capistrano'
+  gem "capistrano-rails"
+  gem 'capistrano3-puma', require: false
+  gem 'capistrano-rvm', require: false
 end
 
 group :test do
