@@ -1,0 +1,14 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <h3 class="card-title">Add Comment</h3>
+  </div>
+  <div class="card-body">
+    <%= form_with model: [@project, Comment.new], local: true do |form| %>
+      <div class="mb-3">
+        <%= form.label :content, "Comment", class: "form-label" %>
+        <%= form.text_area :content, rows: 3, class: "form-control", placeholder: "Write your comment here..." %>
+      </div>
+      <%= form.submit "Add Comment", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

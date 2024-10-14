@@ -1,0 +1,33 @@
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary">Projects</h1>
+    <%= link_to 'New Project', new_project_path, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="row">
+    <% @projects.each do |project| %>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 mb-4">
+          <div class="card-body">
+            <h5 class="card-title text-dark"><%= project.name %></h5>
+            <p class="card-text">
+              Status: <span class="badge <%= project.status == 'completed' ? 'bg-success' : 'bg-primary' %>"><%= project.status.humanize %></span>
+            </p>
+            <p class="card-text">
+              Created at: <span class="text-muted"><%= project.created_at.strftime("%B %d, %Y") %></span>
+            </p>
+            <div class="d-grid">
+              <%= link_to 'View Project', project_path(project), class: 'btn btn-outline-primary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if @projects.empty? %>
+    <div class="alert alert-warning text-center" role="alert">
+      No projects available.
+    </div>
+  <% end %>
+</div>

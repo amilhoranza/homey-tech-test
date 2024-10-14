@@ -1,0 +1,50 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-light">
+          <h1 class="card-title text-primary">Create New Project</h1>
+        </div>
+        <div class="card-body">
+          <% if @project.errors.any? %>
+            <div class="alert alert-danger">
+              <h4 class="alert-heading">There were errors with your submission:</h4>
+              <ul>
+                <% @project.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <%= form_with model: @project, local: true do |form| %>
+            <div class="mb-3">
+              <%= form.label :name, "Project Name", class: "form-label" %>
+              <%= form.text_field :name, class: "form-control", placeholder: "Enter project name" %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :status, "Status", class: "form-label" %>
+              <%= form.select :status, Project.statuses.keys.map { |status| [status.humanize, status] }, {}, class: "form-select" %>
+            </div>
+
+            <div class="d-grid">
+              <%= form.submit "Create Project", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-light">
+          <h3 class="card-title text-secondary">Project Actions</h3>
+        </div>
+        <div class="card-body">
+          <%= link_to 'Back to Projects', projects_path, class: "btn btn-outline-secondary w-100 mb-3" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

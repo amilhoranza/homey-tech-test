@@ -1,0 +1,14 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <h3 class="card-title">Change Status</h3>
+  </div>
+  <div class="card-body">
+    <%= form_with url: project_statuses_path(@project), method: :put, local: true do |form| %>
+      <div class="mb-3">
+        <%= form.label :status, "New Status", class: "form-label" %>
+        <%= form.select :status, Project.statuses.keys.map { |status| [status.humanize, status] }, {}, class: "form-select" %>
+      </div>
+      <%= form.submit "Change Status", class: "btn btn-warning" %>
+    <% end %>
+  </div>
+</div>
