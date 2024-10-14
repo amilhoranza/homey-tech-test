@@ -1,6 +1,19 @@
 
 # Homey Projects
 
+### Deployed Project
+Here are the hosted link to the application
+- https://homey.freepostos.com.br
+
+### Test Users
+- **Admin:**
+  - Email: `amilhoranza@gmail.com`
+  - Password: `Pass1234`
+
+- **Regular user:**
+  - Email: `user@user.com.br`
+  - Password: `Pass1234`
+
 ## How to Run the Tests
 
 To run the tests for the Rails application, follow these steps:
@@ -43,18 +56,3 @@ To run the tests for the Rails application, follow these steps:
    ```bash
    rspec spec/path/to/test_file_spec.rb
    ```
-
-### Deployed Project
-
-Here are the hosted link to the application
-- ***https://homey.freepostos.com.br
-
-### Test Users
-- **Admin:**
-  - Email: `amilhoranza@gmail.com`
-  - Password: `Pass1234`
-
-- **Regular user:**
-  - Email: `user@user.com.br`
-  - Password: `Pass1234`
-
