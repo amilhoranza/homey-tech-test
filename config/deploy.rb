@@ -5,7 +5,7 @@ set :application, "homey"
 set :repo_url, "git@github.com:amilhoranza/homey-tech-test.git"
 set :deploy_to, "/var/www/homey"
 
-append :linked_files, "config/database.yml", "config/storage.yml", "config/master.key"
+append :linked_files, "config/database.yml", "config/storage.yml", "config/master.key", "config/local_env.yml"
 append :linked_dirs, "log", "tmp"
 
 set :keep_releases, 5
