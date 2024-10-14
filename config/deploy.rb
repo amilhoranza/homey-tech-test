@@ -49,14 +49,3 @@ server fetch(:server_address), user: "deploy", roles: %w{app db web}
 
 set :nginx_server_name, fetch(:server_address)
 set :puma_preload_app, true
-
-# after 'deploy:published', 'sidekiq:restart'
-
-# namespace :sidekiq do
-#   desc 'Reiniciar o Sidekiq'
-#   task :restart do
-#     on roles(:app) do
-#       execute :sudo, :systemctl, 'restart', 'sidekiq'
-#     end
-#   end
-# end
