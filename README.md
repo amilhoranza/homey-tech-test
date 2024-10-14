@@ -1,8 +1,8 @@
 
 # Homey Projects
 
-### Deployed Project
-Here are the hosted link to the application
+### Hosted Application
+Here is the hosted link to the application
 - https://homey.freepostos.com.br
 
 ### Test Users
@@ -13,6 +13,17 @@ Here are the hosted link to the application
 - **Regular user:**
   - Email: `user@user.com.br`
   - Password: `Pass1234`
+
+## BONUS
+I created also API endpoints to the main features of the project.
+- **Authentication:**
+   ```bash
+   curl --location 'https://homey.freepostos.com.br/api/v1/auth/login' --form 'email="amilhoranza@gmail.com"' --form 'password="Pass1234"'
+   ```
+- **Create new project:**
+   ```bash
+   curl --location 'https://homey.freepostos.com.br/api/v1/projects' --header 'Authorization: YOUR_TOKEN_HERE' --header 'Content-Type: application/json' --data '{"name": "Project created via API"}'
+   ```
 
 ## How to Run the Tests
 
